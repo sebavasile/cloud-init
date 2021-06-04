@@ -1,4 +1,5 @@
 #!/bin/bash
+# wget -O - https://raw.githubusercontent.com/sebavasile/cloud-init/master/init.sh | bash
 sudo timedatectl set-timezone UTC
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get update
