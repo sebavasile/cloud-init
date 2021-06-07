@@ -28,7 +28,7 @@ read DOCKER_PASSWORD
 docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 echo "Clone Github repository. Enter Github credentials if prompted\n"
 git clone https://github.com/sebavasile/binance-updown-tokens-spread.git /app
-mkdir -p /app/
+mkdir -p /app/python-project/stats
 echo "------------ READY TO RUN ------------"
 echo "Run example: \n\n"
 echo "docker run -d --name binance-spread-adaup-btcdown -v /app/python-project:/app sebavasile/python-binance --pairup ADAUPUSDT --pairdown BTCDOWNUSDT \
