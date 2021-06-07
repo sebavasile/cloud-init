@@ -20,7 +20,11 @@ sudo systemctl enable containerd.service
 apt-get install -y git
 mkdir -p /app/stats && cd /app
 echo "Enter credentials to authenticate to Docker Hub\n\n"
-docker login
+echo "Username: "
+read DOCKER_USERNAME
+echo "Password: "
+read DOCKER_PASSWORD
+docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 echo "Clone Github repository. Enter Github credentials if prompted\n"
 git clone https://github.com/sebavasile/binance-updown-tokens-spread.git
 echo "------------ READY TO RUN ------------"
