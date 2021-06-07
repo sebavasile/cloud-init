@@ -19,7 +19,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 apt-get install -y git
-mkdir -p /app/stats && cd /app
+mkdir -p /app/ && cd /app
 echo "Enter credentials to authenticate to Docker Hub\n\n"
 echo "Username: "
 read DOCKER_USERNAME
@@ -27,9 +27,10 @@ echo "Password: "
 read DOCKER_PASSWORD
 docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 echo "Clone Github repository. Enter Github credentials if prompted\n"
-git clone https://github.com/sebavasile/binance-updown-tokens-spread.git
+git clone https://github.com/sebavasile/binance-updown-tokens-spread.git /app
+mkdir -p /app/
 echo "------------ READY TO RUN ------------"
 echo "Run example: \n\n"
-echo "docker run -d --name binance-spread-adaup-btcdown -v /app/:/app sebavasile/python-binance --pairup ADAUPUSDT --pairdown BTCDOWNUSDT \
+echo "docker run -d --name binance-spread-adaup-btcdown -v /app/python-project:/app sebavasile/python-binance --pairup ADAUPUSDT --pairdown BTCDOWNUSDT \
 --profitpercent 0.5 --ordersize 1000 --statsfile docker-stats-ADAUP-BTCDOWN.txt --csvfiletrades docker-trades.csv"
 
